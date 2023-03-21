@@ -17,28 +17,29 @@ export function generateID(): string {
 // the value isn' empty
 // the todo isn't contained in the todos array (case insensitive)
 export function validateTodo(todo: TodoItem, todos: TodoItem[]): boolean {
-  const TI = new TodoItem();
-  if(TI.value.length < 255 && TI.value !== null && TI.value.length !== 0){
-
+  if(todo.value.length > 255 || todo.value.length === 0 || todos.some(t => t.value.toLowerCase() === todo.value.toLowerCase())){
+    return false;
   }
-  return false;
+  return true;
 }
 
 // capitalize the first letter of the todo
 export function formatTodo(todo: TodoItem): TodoItem {
   // TODO: implement
   return {
-    id: "",
-    value: "",
-    done: false
+    id: todo.id,
+    value: todo.value.charAt(0).toUpperCase() + todo.value.slice(1),
+    done: todo.done,
   }
 }
 
 // generate a random rgb color
 // each value (r,g,b) should be between 50 and 150
 export function generateColor(): string {
-  // TODO: implement
-  return ""
+  const r = Math.floor(Math.random() * 100) + 50;
+  const g = Math.floor(Math.random() * 100) + 50;
+  const b = Math.floor(Math.random() * 100) + 50;
+  return "rgb(" + r + "," + g + "," + b + ")";
 }
 
 export const todoList = writable<TodoItem[]>([]);
