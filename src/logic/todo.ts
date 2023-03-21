@@ -17,7 +17,11 @@ export function generateID(): string {
 // the value isn' empty
 // the todo isn't contained in the todos array (case insensitive)
 export function validateTodo(todo: TodoItem, todos: TodoItem[]): boolean {
-  if(todo.value.length > 255 || todo.value.length === 0 || todos.some(t => t.value.toLowerCase() === todo.value.toLowerCase())){
+  if (
+    todo.value.length > 255 ||
+    todo.value.length === 0 ||
+    todos.some((t) => t.value.toLowerCase() === todo.value.toLowerCase())
+  ) {
     return false;
   }
   return true;
@@ -30,7 +34,7 @@ export function formatTodo(todo: TodoItem): TodoItem {
     id: todo.id,
     value: todo.value.charAt(0).toUpperCase() + todo.value.slice(1),
     done: todo.done,
-  }
+  };
 }
 
 // generate a random rgb color
