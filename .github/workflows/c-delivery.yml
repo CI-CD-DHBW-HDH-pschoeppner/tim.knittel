@@ -31,5 +31,5 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: ghcr.io/ci-cd-dhbw-hdh-pschoeppner/tim.knittel
+        tags: ghcr.io/ci-cd-dhbw-hdh-pschoeppner/tim.knittel/todo:latest
         context: "."
