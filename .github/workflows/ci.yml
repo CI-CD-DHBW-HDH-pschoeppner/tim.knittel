@@ -8,13 +8,15 @@ jobs:
         working-directory: ./
     steps:
       - uses: actions/checkout@v3
+      
       - name: install npm modules
         run: npm install
+        
       - name: run ESLint
         run: npm run lint
-      - name: run prettier
-        run: npm run format
-      - name: run prettier check
+        
+      - name: run format check
         run: npm run format:check
+        
       - name: unit tests
         run: npm run test
