@@ -8,8 +8,8 @@ export class TodoItem {
 
 // this function must return a unique ID every time it is called
 export function generateID(): string {
-    // TODO: implement
-    return ""
+  const uniqueId = Math.random().toString(36);
+  return uniqueId;
 }
 
 // make sure, that
@@ -17,7 +17,10 @@ export function generateID(): string {
 // the value isn' empty
 // the todo isn't contained in the todos array (case insensitive)
 export function validateTodo(todo: TodoItem, todos: TodoItem[]): boolean {
-  // TODO: implement
+  const TI = new TodoItem();
+  if(TI.value.length < 255 && TI.value !== null && TI.value.length !== 0){
+
+  }
   return false;
 }
 
