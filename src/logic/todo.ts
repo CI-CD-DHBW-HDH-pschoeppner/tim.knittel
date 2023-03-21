@@ -29,7 +29,6 @@ export function validateTodo(todo: TodoItem, todos: TodoItem[]): boolean {
 
 // capitalize the first letter of the todo
 export function formatTodo(todo: TodoItem): TodoItem {
-  // TODO: implement
   return {
     id: todo.id,
     value: todo.value.charAt(0).toUpperCase() + todo.value.slice(1),
