@@ -72,3 +72,5 @@ describe("formatTodo function", () => {
     });
   });
 });
+
+// Hier fehlt ein Test für `generateColor`
